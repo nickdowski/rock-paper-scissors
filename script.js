@@ -14,28 +14,34 @@ function getHumanChoice() {
     return choice;
 }
 
-
-function determineWinner(humanChoice, computerChoice) {
-    if (humanChoice === computerChoice) {
-        alert( 'Tie!' ) 
-    } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
-        alert( 'You win!' )
-    }
-    else if (humanChoice === 'paper' && computerChoice === 'rock') {
-        alert( 'You win!' )
-    }
-    else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-        alert( 'You win!' )
-    }
-    else {
-        alert('You lose!')
-    }
-}
-
-function playRound(humanChoice, computerChoice) {
-}
-
 let humanScore = 0;
 let computerScore = 0;
 
-function
+function playRound(humanChoice, computerChoice) {
+    // Make humanChoice case insensitive
+    humanChoice = humanChoice.toLowerCase();
+    
+    // Display the choices and determine the winner
+    if (humanChoice === computerChoice) {
+        alert('Tie!');
+    } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
+        alert('You Win!');
+        humanScore++;
+    } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
+        alert('You Win!');
+        humanScore++;
+    } else if (humanChoice === 'paper' && computerChoice === 'rock') {
+        alert('You Win!');
+        humanScore++;
+    } else {
+        alert('You Lose!');
+        computerScore++;
+    }
+    
+    // Display the scores
+    console.log('Human: ' + humanScore + ' Computer: ' + computerScore);
+}
+
+playRound(getHumanChoice(), getComputerChoice());
+
+
