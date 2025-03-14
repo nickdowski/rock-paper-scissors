@@ -20,7 +20,6 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice) {
     // Make humanChoice case insensitive
     humanChoice = humanChoice.toLowerCase();
-    
     // Display the choices and determine the winner
     if (humanChoice === computerChoice) {
         alert('Tie!');
@@ -42,6 +41,10 @@ function playRound(humanChoice, computerChoice) {
     console.log('Human: ' + humanScore + ' Computer: ' + computerScore);
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+function playGame() {
+    for (let i = 0 ; i < 5 ; i++) {
+        playRound(getHumanChoice(), getComputerChoice());
+    }
+}
 
-
+playGame();
