@@ -38,13 +38,26 @@ function playRound(humanChoice, computerChoice) {
     }
     
     // Display the scores
-    console.log('Human: ' + humanScore + ' Computer: ' + computerScore);
+    const scores = `Human: ${humanScore} Computer: ${computerScore}`;
 }
 
-function playGame() {
-    for (let i = 0 ; i < 5 ; i++) {
-        playRound(getHumanChoice(), getComputerChoice());
-    }
-}
+// Create a rock button
+const rock = document.createElement('button');
+rock.textContent = 'Rock';
+rock.addEventListener('click', () => playRound('rock', getComputerChoice()));
+document.body.appendChild(rock);
 
-playGame();
+// Create a paper button
+const paper = document.createElement('button');
+paper.textContent = 'Paper';
+paper.addEventListener('click', () => playRound('paper', getComputerChoice()));
+document.body.appendChild(paper);
+
+// Create a scissors button
+const scissors = document.createElement('button');
+scissors.textContent = 'Scissors';
+scissors.addEventListener('click', () => playRound('scissors', getComputerChoice()));
+document.body.appendChild(scissors);
+
+
+
