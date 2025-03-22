@@ -38,7 +38,11 @@ function playRound(humanChoice, computerChoice) {
     }
     
     // Display the scores
-    const scores = `Human: ${humanScore} Computer: ${computerScore}`;
+    const humanScoreDisplay = document.getElementById('human-score');
+    humanScoreDisplay.textContent = humanScore;
+    const computerScoreDisplay = document.getElementById('computer-score');
+    computerScoreDisplay.textContent = computerScore;
+
 }
 
 // Create a rock button
